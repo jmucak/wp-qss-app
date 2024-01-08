@@ -2,7 +2,7 @@
     "name": "josip/wp-qss-app",
     "autoload": {
         "psr-4": {
-            "Josip\\WpQssApp\\": "app/"
+            "wpQssApp\\": "app/"
         }
     },
     "authors": [
