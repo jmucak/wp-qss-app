@@ -28,7 +28,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'MOVIES_LOCAL_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MOVIES_LOCAL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'MOVIES_PLUGIN_SLUG', 'bf-advanced-images' );
 define( 'MOVIES_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 define( 'MOVIES_PLUGIN_PATH', __DIR__ );
