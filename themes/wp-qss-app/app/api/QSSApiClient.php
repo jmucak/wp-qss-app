@@ -108,9 +108,7 @@ class QSSApiClient extends QSSApi {
 	public function get_current_user(): array {
 		$response = $this->get( 'me' );
 
-		// Do something
-
-		return array();
+		return $this->parse_response( $response );
 	}
 
 	private function parse_response( array|WP_Error $response ): array {
