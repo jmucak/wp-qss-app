@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "files": [
+    ],
+    "classmap": [
+    ],
+    "psr-4": {
+      "movies\\": "app"
+    }
+  }
+}
