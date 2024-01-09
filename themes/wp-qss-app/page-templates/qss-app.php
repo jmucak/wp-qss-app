@@ -1,30 +1,23 @@
 <?php
 /** Template Name: QSS App Template */
 
-//$auth_client = new AuthenticationClient( '' );
-//$auth_client->get_token();
-
 use wpQssApp\api\AuthenticationClient;
-use wpQssApp\api\QSSApiClient;
 
-//$token = $_COOKIE['qss_token'];
-$token = '';
+$client   = new AuthenticationClient();
+$qss_user = $client->get_current_user();
 
+//$refresh_token = $client->refresh_token();
 
 if ( ! empty( $_POST['qss_login'] ) ) {
 	$email    = ! empty( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
 	$password = ! empty( $_POST['password'] ) ? sanitize_text_field( $_POST['password'] ) : '';
 
-//	if ( ! empty( $email ) && ! empty( $password ) ) {
-//		$client = new AuthenticationClient( '' );
-//		$client->get_token();
-//	}
+	if ( ! empty( $email ) && ! empty( $password ) ) {
+		$qss_user = $client->authenticate( $email, $password );
+	}
 }
 
 get_header();
-
-$client   = new QSSApiClient( 'users', $token );
-$qss_user = $client->get_current_user();
 
 if ( empty( $qss_user ) ) {
 	get_partial( 'qss/login-form' );

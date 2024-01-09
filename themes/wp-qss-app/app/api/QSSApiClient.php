@@ -2,13 +2,10 @@
 
 namespace wpQssApp\api;
 
-use WP_Error;
-
 class QSSApiClient extends QSSApi {
 	private string $type;
 
-	public function __construct( string $type, string $token ) {
-		parent::__construct( $token );
+	public function __construct( string $type ) {
 		$types      = array( 'authors', 'books', 'tags', 'users' );
 		$this->type = in_array( $type, $types ) ? $type : '';
 	}
@@ -103,25 +100,5 @@ class QSSApiClient extends QSSApi {
 		// Do something
 
 		return array();
-	}
-
-	public function get_current_user(): array {
-		$response = $this->get( 'me' );
-
-		return $this->parse_response( $response );
-	}
-
-	private function parse_response( array|WP_Error $response ): array {
-		if ( empty( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
-			// Save response in log and/or throw some error message
-			return array();
-		}
-
-		$body = json_decode( wp_remote_retrieve_body( $response ), ARRAY_A );
-		if ( empty( $body ) ) {
-			return array();
-		}
-
-		return $body;
 	}
 }

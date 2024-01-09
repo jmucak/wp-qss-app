@@ -8,44 +8,91 @@ class AuthenticationClient extends QSSApi {
 	const RESET_PASSWORD_URL = 'reset-password';
 	const MAGIC_LINKS_URL = 'magic-links';
 
-	public function get_token(): array {
-		$args = array(
+	/**
+	 *
+	 * @param string $email // ahsoka.tano@q.agency
+	 * @param string $password // Kryze4President
+	 *
+	 * @return array
+	 */
+	public function authenticate( string $email, string $password ): array {
+		if ( empty( $email ) || empty( $password ) ) {
+			return array();
+		}
+
+		$args     = array(
 			'sslverify' => false,
 			'headers'   => array(
-				'Accept'        => 'application/json',
-				'Content-Type'  => 'application/json',
+				'Accept'       => 'application/json',
+				'Content-Type' => 'application/json',
 			),
-			'body' => wp_json_encode(array(
-				'email'    => 'ahsoka.tano@q.agency',
-				'password' => 'Kryze4President',
-			))
+			'body'      => wp_json_encode( array(
+				'email'    => $email,
+				'password' => $password,
+			) ),
 		);
-		$response = wp_remote_post(self::BASE_URL . self::TOKEN_URL, $args);
+		$response = wp_remote_post( self::BASE_URL . self::TOKEN_URL, $args );
 
-		if ( empty( $response ) || is_wp_error( $response ) ) {
-			return array();
+		$parsed_data = $this->parse_response( $response );
+
+		if ( ! $this->save_token_data( $parsed_data ) ) {
+			// token has not been stored
+			// log in error log
 		}
 
-		$token = json_decode( wp_remote_retrieve_body( $response ), ARRAY_A );
-
-		if ( empty( $token['token_key'] ) ) {
-			return array();
-		}
-
-		setcookie( 'qss_token', $token['token_key'] );
-		setcookie( 'qss_auth', json_encode( $token ) );
-
-		return $token;
+		return ! empty( $parsed_data['user'] ) ? $parsed_data['user'] : array();
 	}
 
-	public function refresh_token( string $refresh_token ): array {
-		$url      = self::TOKEN_REFRESH_URL . '/' . $refresh_token;
+	public function get_current_user(): array {
+		$response = $this->get( 'me' );
+
+		return $this->parse_response( $response );
+	}
+
+	private function save_token_data( array $data ): bool {
+		if ( empty( $data ) || empty( $data['token_key'] ) ) {
+			return false;
+		}
+
+		// If only one user can be logged in on website like integration then store token in database
+		if ( 'database' === $this->token_type ) {
+			update_option( 'qss_token_key', $data['token_key'] );
+			update_option( 'qss_token_data', $data );
+
+			return true;
+		}
+
+		// If multiple users can be logged in then store token in cookie
+		if ( 'cookie' === $this->token_type ) {
+			setcookie( 'qss_token_key', $data['token_key'] );
+			setcookie( 'qss_token_data', json_encode( $data ) );
+
+			return true;
+		}
+
+		return false;
+	}
+
+	public function refresh_token(): array {
+		$token_data = $this->get_token_data();
+
+		if ( empty( $token_data['refresh_token_key'] ) ) {
+			return array();
+		}
+
+		$url      = self::TOKEN_REFRESH_URL . '/' . $token_data['refresh_token_key'];
 		$response = $this->get( $url );
 
-		// Do something
+		$parsed_data = $this->parse_response( $response );
 
-		return array();
+		if ( ! $this->save_token_data( $parsed_data ) ) {
+			// token has not been stored
+			// log in error log
+		}
+
+		return $parsed_data;
 	}
+
 
 	public function reset_password(): array {
 		$args     = array(
