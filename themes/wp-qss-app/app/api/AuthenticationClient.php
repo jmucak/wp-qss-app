@@ -2,17 +2,25 @@
 
 namespace wpQssApp\api;
 
-class AuthenticationClient extends QSSApiClient {
+class AuthenticationClient extends QSSApi {
 	const TOKEN_URL = 'token';
 	const TOKEN_REFRESH_URL = 'token/refresh';
 	const RESET_PASSWORD_URL = 'reset-password';
 	const MAGIC_LINKS_URL = 'magic-links';
 
 	public function get_token(): array {
-		$response = $this->post( self::TOKEN_URL, array(
-			'email'    => 'ahsoka.tano@q.agency',
-			'password' => 'Kryze4President',
-		) );
+		$args = array(
+			'sslverify' => false,
+			'headers'   => array(
+				'Accept'        => 'application/json',
+				'Content-Type'  => 'application/json',
+			),
+			'body' => wp_json_encode(array(
+				'email'    => 'ahsoka.tano@q.agency',
+				'password' => 'Kryze4President',
+			))
+		);
+		$response = wp_remote_post(self::BASE_URL . self::TOKEN_URL, $args);
 
 		if ( empty( $response ) || is_wp_error( $response ) ) {
 			return array();
