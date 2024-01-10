@@ -8,16 +8,20 @@ class AuthenticationClient extends QSSApi {
 	const RESET_PASSWORD_URL = 'reset-password';
 	const MAGIC_LINKS_URL = 'magic-links';
 
+	public function __construct( string $token_type = 'database' ) {
+		parent::__construct( $token_type );
+	}
+
+	// ahsoka.tano@q.agency
+	// Kryze4President
 	/**
-	 *
-	 * @param string $email // ahsoka.tano@q.agency
-	 * @param string $password // Kryze4President
+	 * @param array $params (string|$email, string|$password)
 	 *
 	 * @return array
 	 */
-	public function authenticate( string $email, string $password ): array {
-		if ( empty( $email ) || empty( $password ) ) {
-			return array();
+	public function authenticate( array $params = array() ): array {
+		if ( empty( $params['email'] ) || empty( $params['password'] ) ) {
+			return $this->get_current_user();
 		}
 
 		$args     = array(
@@ -27,8 +31,8 @@ class AuthenticationClient extends QSSApi {
 				'Content-Type' => 'application/json',
 			),
 			'body'      => wp_json_encode( array(
-				'email'    => $email,
-				'password' => $password,
+				'email'    => $params['email'],
+				'password' => $params['password'],
 			) ),
 		);
 		$response = wp_remote_post( self::BASE_URL . self::TOKEN_URL, $args );

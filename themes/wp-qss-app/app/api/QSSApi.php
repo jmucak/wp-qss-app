@@ -7,7 +7,11 @@ use WP_Error;
 class QSSApi {
 	const BASE_URL = 'https://symfony-skeleton.q-tests.com/api/v2/';
 	const TOKEN_URL = 'token';
-	protected string $token_type = 'database'; // database|cookie
+	protected string $token_type; // database|cookie
+
+	public function __construct( string $token_type = 'database' ) {
+		$this->token_type = $token_type;
+	}
 
 	protected function get( string $url ): array|WP_Error {
 		return $this->api_call( $url, array(
