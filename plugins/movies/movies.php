@@ -36,3 +36,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $core = new MoviesCore();
 $core->init();
+
+$url = MOVIES_LOCAL_PLUGIN_PATH;
+$var = 0;

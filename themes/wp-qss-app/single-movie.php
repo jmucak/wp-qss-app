@@ -4,6 +4,7 @@ get_header();
 
 $movie      = get_post();
 $title_meta = get_post_meta( $movie->ID, '_movie_title', true );
+
 ?>
 
     <main>
@@ -12,7 +13,7 @@ $title_meta = get_post_meta( $movie->ID, '_movie_title', true );
         </header>
 
         <section>
-			<?php echo wp_kses_post( $movie->post_content ); ?>
+			<?php the_content(); ?>
         </section>
     </main>
 

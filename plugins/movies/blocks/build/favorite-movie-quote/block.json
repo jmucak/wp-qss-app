@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "movies/favorite-movie-quote",
+  "version": "1.0.0",
+  "title": "Favorite Movie Quote",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Favorite movie quote block",
+  "example": {},
+  "supports": {
+    "html": true
+  },
+  "attributes": {
+    "quote": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "movies",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
