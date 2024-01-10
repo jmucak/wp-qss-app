@@ -1,6 +1,6 @@
 <?php
 
-namespace movies\core;
+namespace movies\options;
 
 class MoviesBlocks {
 	public function register() : void {

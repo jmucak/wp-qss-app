@@ -1,10 +1,8 @@
 <?php
 get_header();
 
-
 $movie      = get_post();
 $title_meta = get_post_meta( $movie->ID, '_movie_title', true );
-
 ?>
 
     <main>
@@ -18,5 +16,4 @@ $title_meta = get_post_meta( $movie->ID, '_movie_title', true );
     </main>
 
 <?php
-
 get_footer();

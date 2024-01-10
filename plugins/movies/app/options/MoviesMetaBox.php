@@ -1,6 +1,6 @@
 <?php
 
-namespace movies\core;
+namespace movies\options;
 
 class MoviesMetaBox {
 	public function register(): void {

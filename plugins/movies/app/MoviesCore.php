@@ -1,11 +1,14 @@
 <?php
 
-namespace movies\core;
+namespace movies;
 
+use movies\options\MoviesBlocks;
+use movies\options\MoviesCPT;
+use movies\options\MoviesMetaBox;
 use WP_Post;
 
 class MoviesCore {
-	public function init(): void {
+	public function load(): void {
 		add_action( 'init', array( new MoviesCPT(), 'register' ) );
 		add_action( 'init', array( new MoviesBlocks(), 'register' ) );
 		add_action( 'add_meta_boxes', array( new MoviesMetaBox(), 'register' ) );

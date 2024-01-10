@@ -20,22 +20,15 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-use movies\core\MoviesCore;
+use movies\MoviesCore;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 define( 'MOVIES_LOCAL_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'MOVIES_LOCAL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'MOVIES_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-
-define( 'MOVIES_PLUGIN_PATH', __DIR__ );
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 $core = new MoviesCore();
-$core->init();
-
-$url = MOVIES_LOCAL_PLUGIN_PATH;
-$var = 0;
+$core->load();

@@ -1,6 +1,6 @@
 <?php
 
-namespace movies\core;
+namespace movies\options;
 
 class MoviesCPT {
 	const TYPE = 'movie';

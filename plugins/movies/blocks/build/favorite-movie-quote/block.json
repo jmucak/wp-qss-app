@@ -5,11 +5,11 @@
   "version": "1.0.0",
   "title": "Favorite Movie Quote",
   "category": "widgets",
-  "icon": "smiley",
+  "icon": "editor-video",
   "description": "Favorite movie quote block",
   "example": {},
   "supports": {
-    "html": true
+    "html": false
   },
   "attributes": {
     "quote": {
