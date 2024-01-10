@@ -3,7 +3,7 @@
 namespace wpQssApp\core;
 
 class Core {
-	public function init(): void {
+	public function load(): void {
 		$this->load_classes();
 	}
 
