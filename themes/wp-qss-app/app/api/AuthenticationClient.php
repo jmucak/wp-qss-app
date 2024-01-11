@@ -120,14 +120,15 @@ class AuthenticationClient extends QSSApi {
 		return array();
 	}
 
-	public function send_magic_link(): array {
+	public function send_magic_link( string $email = '' ): array {
+		if ( empty( $email ) ) {
+			return array();
+		}
 		$response = $this->post( self::MAGIC_LINKS_URL, array(
-			'email' => 'string',
+			'email' => $email,
 		) );
 
-		// DO Something
-
-		return array();
+		return $this->parse_response( $response );
 	}
 
 	public function generate_access_token( string $email, string $hash ): array {

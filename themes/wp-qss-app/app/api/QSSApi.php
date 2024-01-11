@@ -9,7 +9,7 @@ class QSSApi {
 	const TOKEN_URL = 'token';
 	protected string $token_type; // database|cookie
 
-	public function __construct( string $token_type = 'database' ) {
+	public function __construct( string $token_type ) {
 		$this->token_type = $token_type;
 	}
 

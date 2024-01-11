@@ -5,7 +5,8 @@ namespace wpQssApp\api;
 class QSSApiClient extends QSSApi {
 	private string $type;
 
-	public function __construct( string $type ) {
+	public function __construct( string $type, string $token_type = 'database' ) {
+		parent::__construct( $token_type );
 		$types      = array( 'authors', 'books', 'tags', 'users' );
 		$this->type = in_array( $type, $types ) ? $type : '';
 	}
@@ -40,8 +41,8 @@ class QSSApiClient extends QSSApi {
 		return $this->parse_response( $response );
 	}
 
-	public function find_by_id( int $id ): array {
-		if ( empty( $this->type ) ) {
+	public function find_by_id( ?int $id ): array {
+		if ( empty( $this->type ) || empty( $id ) ) {
 			return array();
 		}
 
@@ -52,8 +53,8 @@ class QSSApiClient extends QSSApi {
 		return $this->parse_response( $response );
 	}
 
-	public function update_item( int $id, array $data ): array {
-		if ( empty( $this->type ) ) {
+	public function update_item( ?int $id, array $data ): array {
+		if ( empty( $this->type ) || empty( $id ) ) {
 			return array();
 		}
 		$url = $this->type . '/' . $id;
@@ -63,8 +64,8 @@ class QSSApiClient extends QSSApi {
 		return $this->parse_response( $response );
 	}
 
-	public function delete_item( int $id ): array {
-		if ( empty( $this->type ) ) {
+	public function delete_item( ?int $id ): array {
+		if ( empty( $this->type ) || empty( $id ) ) {
 			return array();
 		}
 		$url = $this->type . '/' . $id;
@@ -87,7 +88,7 @@ class QSSApiClient extends QSSApi {
 		$url      = $this->type . '/' . $user_id . '/tags/' . $tag_id;
 		$response = $this->post( $url );
 
-		return array();
+		return $this->parse_response( $response );
 	}
 
 	public function remove_user_tag( int $user_id, int $tag_id ): array {
@@ -97,8 +98,6 @@ class QSSApiClient extends QSSApi {
 		$url      = $this->type . '/' . $user_id . '/tags/' . $tag_id;
 		$response = $this->delete( $url );
 
-		// Do something
-
-		return array();
+		return $this->parse_response( $response );
 	}
 }

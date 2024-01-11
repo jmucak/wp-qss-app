@@ -14,7 +14,8 @@ $qss_user = $qss_user = $client->authenticate( $params );
 		get_partial( 'qss/login-form' );
 	} else {
 		get_partial( 'qss/screen', array(
-			'qss_user' => $qss_user,
+			'qss_user'   => $qss_user,
+			'token_type' => 'database',
 		) );
 	}
 	?>
