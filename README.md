@@ -35,3 +35,4 @@ Plugin (Movies)
    - `git clone git@github.com:jmucak/wp-qss-app.git .`
 3. Open project in code editor and run `composer install`
 4. For Feature Theme 3 you need to create page and assign `QSS App Template` page template
+5. To enable "Movies" CPT you need to Movies plugin from WordPress admin
