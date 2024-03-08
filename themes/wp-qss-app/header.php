@@ -1,3 +1,10 @@
+<?php
+
+
+use wpQssApp\bundles\Bundle;
+
+Bundle::register();
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

@@ -1,8 +1,10 @@
 <?php
 
 namespace wpQssApp\core;
+
 use wpQssApp\api\AuthenticationClient;
 use wpQssApp\menus\QSSAPIMenu;
+use wpQssApp\options\Hooks;
 
 class Core {
 	public function load(): void {
@@ -20,6 +22,8 @@ class Core {
 	}
 
 	private function load_classes(): void {
+		$hooks = new Hooks();
+		$hooks->init();
 	}
 
 }

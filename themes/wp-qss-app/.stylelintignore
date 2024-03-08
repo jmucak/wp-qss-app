@@ -1,0 +1,5 @@
+dist/
+node_modules/
+bower_components/
+src/styles/settings/**/*.scss
+src/styles/tools/**/*.scss
