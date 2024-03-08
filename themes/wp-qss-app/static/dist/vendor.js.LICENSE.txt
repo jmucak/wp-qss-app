@@ -1,203 +1,136 @@
-/*!************************************!*\
-  !*** ./node_modules/gsap/index.js ***!
-  \************************************/
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
 
-/*!*************************************!*\
-  !*** ./node_modules/react/index.js ***!
-  \*************************************/
+/*!
+	autosize 4.0.4
+	license: MIT
+	http://www.jacklmoore.com/autosize
+*/
 
-/*!***************************************!*\
-  !*** ./node_modules/gsap/Observer.js ***!
-  \***************************************/
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
 
-/*!****************************************!*\
-  !*** ./node_modules/gsap/CSSPlugin.js ***!
-  \****************************************/
+/*!
+ * clipboard.js v2.0.11
+ * https://clipboardjs.com/
+ *
+ * Licensed MIT © Zeno Rocha
+ */
 
-/*!****************************************!*\
-  !*** ./node_modules/gsap/gsap-core.js ***!
-  \****************************************/
+/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
 
-/*!****************************************!*\
-  !*** ./node_modules/swiper/swiper.mjs ***!
-  \****************************************/
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
-/*!*****************************************!*\
-  !*** ./node_modules/react-dom/index.js ***!
-  \*****************************************/
+/*! queue-microtask. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
-/*!*****************************************!*\
-  !*** ./node_modules/scheduler/index.js ***!
-  \*****************************************/
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
-/*!******************************************!*\
-  !*** ./node_modules/react-dom/client.js ***!
-  \******************************************/
+/*! showdown v 1.9.1 - 02-11-2019 */
 
-/*!********************************************!*\
-  !*** ./node_modules/gsap/ScrollTrigger.js ***!
-  \********************************************/
+/*! simple-peer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
-/*!*********************************************!*\
-  !*** ./node_modules/gsap/ScrollToPlugin.js ***!
-  \*********************************************/
+/**
+ * @license React
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!**********************************************!*\
-  !*** ./node_modules/swiper/modules/a11y.mjs ***!
-  \**********************************************/
+/**
+ * @license React
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!**********************************************!*\
-  !*** ./node_modules/swiper/modules/grid.mjs ***!
-  \**********************************************/
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!**********************************************!*\
-  !*** ./node_modules/swiper/modules/zoom.mjs ***!
-  \**********************************************/
+/**
+ * @license React
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!**********************************************!*\
-  !*** ./node_modules/swiper/shared/utils.mjs ***!
-  \**********************************************/
+/**
+ * @license React
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!***********************************************!*\
-  !*** ./node_modules/swiper/modules/index.mjs ***!
-  \***********************************************/
+/**
+ * @license React
+ * use-sync-external-store-shim.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!************************************************!*\
-  !*** ./node_modules/swiper/modules/thumbs.mjs ***!
-  \************************************************/
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!*************************************************!*\
-  !*** ./node_modules/swiper/modules/history.mjs ***!
-  \*************************************************/
+/** @license React v17.0.2
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-/*!*************************************************!*\
-  !*** ./node_modules/swiper/modules/virtual.mjs ***!
-  \*************************************************/
+//! Copyright (c) JS Foundation and other contributors
 
-/*!**************************************************!*\
-  !*** ./node_modules/instant.page/instantpage.js ***!
-  \**************************************************/
+//! github.com/moment/moment-timezone
 
-/*!**************************************************!*\
-  !*** ./node_modules/swiper/modules/autoplay.mjs ***!
-  \**************************************************/
+//! license : MIT
 
-/*!**************************************************!*\
-  !*** ./node_modules/swiper/modules/keyboard.mjs ***!
-  \**************************************************/
+//! moment-timezone-utils.js
 
-/*!**************************************************!*\
-  !*** ./node_modules/swiper/modules/parallax.mjs ***!
-  \**************************************************/
+//! moment-timezone.js
 
-/*!***************************************************!*\
-  !*** ./node_modules/swiper/modules/free-mode.mjs ***!
-  \***************************************************/
+//! moment.js
 
-/*!***************************************************!*\
-  !*** ./node_modules/swiper/modules/scrollbar.mjs ***!
-  \***************************************************/
+//! moment.js locale configuration
 
-/*!****************************************************!*\
-  !*** ./node_modules/swiper/modules/controller.mjs ***!
-  \****************************************************/
-
-/*!****************************************************!*\
-  !*** ./node_modules/swiper/modules/mousewheel.mjs ***!
-  \****************************************************/
-
-/*!****************************************************!*\
-  !*** ./node_modules/swiper/modules/navigation.mjs ***!
-  \****************************************************/
-
-/*!****************************************************!*\
-  !*** ./node_modules/swiper/modules/pagination.mjs ***!
-  \****************************************************/
-
-/*!****************************************************!*\
-  !*** ./node_modules/swiper/shared/effect-init.mjs ***!
-  \****************************************************/
-
-/*!****************************************************!*\
-  !*** ./node_modules/swiper/shared/swiper-core.mjs ***!
-  \****************************************************/
-
-/*!*****************************************************!*\
-  !*** ./node_modules/react/cjs/react.development.js ***!
-  \*****************************************************/
-
-/*!*****************************************************!*\
-  !*** ./node_modules/slim-select/dist/slimselect.js ***!
-  \*****************************************************/
-
-/*!*****************************************************!*\
-  !*** ./node_modules/swiper/modules/effect-cube.mjs ***!
-  \*****************************************************/
-
-/*!*****************************************************!*\
-  !*** ./node_modules/swiper/modules/effect-fade.mjs ***!
-  \*****************************************************/
-
-/*!*****************************************************!*\
-  !*** ./node_modules/swiper/modules/effect-flip.mjs ***!
-  \*****************************************************/
-
-/*!******************************************************!*\
-  !*** ./node_modules/swiper/modules/effect-cards.mjs ***!
-  \******************************************************/
-
-/*!******************************************************!*\
-  !*** ./node_modules/swiper/modules/manipulation.mjs ***!
-  \******************************************************/
-
-/*!******************************************************!*\
-  !*** ./node_modules/swiper/shared/create-shadow.mjs ***!
-  \******************************************************/
-
-/*!******************************************************!*\
-  !*** ./node_modules/swiper/shared/effect-target.mjs ***!
-  \******************************************************/
-
-/*!*******************************************************!*\
-  !*** ./node_modules/swiper/shared/ssr-window.esm.mjs ***!
-  \*******************************************************/
-
-/*!*********************************************************!*\
-  !*** ./node_modules/swiper/modules/effect-creative.mjs ***!
-  \*********************************************************/
-
-/*!*********************************************************!*\
-  !*** ./node_modules/swiper/modules/hash-navigation.mjs ***!
-  \*********************************************************/
-
-/*!**********************************************************!*\
-  !*** ./node_modules/swiper/modules/effect-coverflow.mjs ***!
-  \**********************************************************/
-
-/*!************************************************************!*\
-  !*** ./node_modules/swiper/shared/classes-to-selector.mjs ***!
-  \************************************************************/
-
-/*!************************************************************!*\
-  !*** ./node_modules/vanilla-lazyload/dist/lazyload.min.js ***!
-  \************************************************************/
-
-/*!*************************************************************!*\
-  !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
-  \*************************************************************/
-
-/*!*************************************************************!*\
-  !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
-  \*************************************************************/
-
-/*!*****************************************************************!*\
-  !*** ./node_modules/@bornfight/b-accordion/src/js/Accordion.js ***!
-  \*****************************************************************/
-
-/*!**********************************************************************!*\
-  !*** ./node_modules/swiper/shared/create-element-if-not-defined.mjs ***!
-  \**********************************************************************/
-
-/*!**********************************************************************!*\
-  !*** ./node_modules/swiper/shared/effect-virtual-transition-end.mjs ***!
-  \**********************************************************************/
+//! version : 0.5.45

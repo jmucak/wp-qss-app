@@ -3,6 +3,7 @@
 namespace wpQssApp\core;
 
 use wpQssApp\api\AuthenticationClient;
+use wpQssApp\blocks\Blocks;
 use wpQssApp\menus\QSSAPIMenu;
 use wpQssApp\options\Hooks;
 
@@ -24,6 +25,9 @@ class Core {
 	private function load_classes(): void {
 		$hooks = new Hooks();
 		$hooks->init();
+
+		$blocks = new Blocks();
+		$blocks->init();
 	}
 
 }

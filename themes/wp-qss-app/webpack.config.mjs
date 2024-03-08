@@ -9,6 +9,9 @@ import RemoveEmptyScriptsPlugin from "webpack-remove-empty-scripts";
 // ReferenceError: __dirname is not defined in ES module scope
 const __dirname = path.resolve();
 
+let folder = "admin/";
+// let folder = "";
+
 export default (env, argv) => {
     const mode = argv.mode;
     console.log(`Running in ${mode} mode...`);
@@ -19,9 +22,8 @@ export default (env, argv) => {
 
     // Define the entry points for the webpack build
     const entry = {
-        bundle: "./static/js/index.js",
-        example_app: "./static/js/example_app/index.js",
-        style: ["./static/scss/style.scss"],
+        bundle: "./static/"+ folder +"js/index.js",
+        style: ["./static/"+ folder +"scss/style.scss"],
     };
 
     // Define the plugins to be used in the webpack build
@@ -30,7 +32,7 @@ export default (env, argv) => {
         new BrowserSyncPlugin(
             {
                 proxy: proxy,
-                files: ["static/dist/*.js", "static/dist/*.css", "**/*.php", "**/*.html"],
+                files: ["static/"+ folder +"dist/*.js", "static"+ folder +"/dist/*.css", "**/*.php", "**/*.html"],
                 injectCss: true,
                 open: false,
             },

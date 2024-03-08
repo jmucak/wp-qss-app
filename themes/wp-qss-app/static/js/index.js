@@ -68,99 +68,99 @@ ready(() => {
     ].join(";");
     console.info("dev by: %c Bornfight Studio ", credits);
 
-    /**
-     * HELPERS
-     */
-
-    /**
-     * Grid
-     * @type {Grid}
-     */
-    const grid = new Grid();
-    grid.init();
-
-    /**
-     * COMPONENTS
-     */
-
-    /**
-     * Lazy
-     * @type {Lazy}
-     */
-    const lazy = new Lazy();
-    lazy.init();
-
-    /**
-     * Responsive video
-     * @type {ResponsiveVideo}
-     */
-    const responsiveVideo = new ResponsiveVideo();
-    responsiveVideo.init();
-
-    /**
-     * Video on scroll
-     * @type {VideoOnScroll}
-     */
-    const videoOnScroll = new VideoOnScroll();
-    videoOnScroll.init();
-
-    /**
-     * Accordion
-     * @type {Accordion}
-     */
-    new Accordion(undefined, {
-        openingEase: "power2.out",
-        closingEase: "power2.in",
-    });
-
-    /**
-     * Scroll to animation
-     * @type {ScrollToAnimation}
-     */
-    const scrollToAnimation = new ScrollToAnimation();
-    scrollToAnimation.init();
-
-    /**
-     * Acceptance input
-     * @type {AcceptanceInput}
-     */
-    const acceptanceInput = new AcceptanceInput();
-    acceptanceInput.init();
-
-    /**
-     * Password input
-     * @type {PasswordInput}
-     */
-    const passwordInput = new PasswordInput();
-    passwordInput.init();
-
-    /**
-     * Search input
-     * @type {SearchInput}
-     */
-    const searchInput = new SearchInput();
-    searchInput.init();
-
-    /**
-     * Select input
-     * @type {SelectInput}
-     */
-    const selectInput = new SelectInput();
-    selectInput.init();
-
-    /**
-     * Navigation
-     * @type {Navigation}
-     */
-    const navigation = new Navigation();
-    navigation.init();
-
-    /**
-     * Slider
-     * @type {Slider}
-     */
-    const slider = new Slider();
-    slider.init();
-
     console.log("Hello");
+
+    /**
+    //  * HELPERS
+    //  */
+    //
+    // /**
+    //  * Grid
+    //  * @type {Grid}
+    //  */
+    // const grid = new Grid();
+    // grid.init();
+    //
+    // /**
+    //  * COMPONENTS
+    //  */
+    //
+    // /**
+    //  * Lazy
+    //  * @type {Lazy}
+    //  */
+    // const lazy = new Lazy();
+    // lazy.init();
+    //
+    // /**
+    //  * Responsive video
+    //  * @type {ResponsiveVideo}
+    //  */
+    // const responsiveVideo = new ResponsiveVideo();
+    // responsiveVideo.init();
+    //
+    // /**
+    //  * Video on scroll
+    //  * @type {VideoOnScroll}
+    //  */
+    // const videoOnScroll = new VideoOnScroll();
+    // videoOnScroll.init();
+    //
+    // /**
+    //  * Accordion
+    //  * @type {Accordion}
+    //  */
+    // new Accordion(undefined, {
+    //     openingEase: "power2.out",
+    //     closingEase: "power2.in",
+    // });
+    //
+    // /**
+    //  * Scroll to animation
+    //  * @type {ScrollToAnimation}
+    //  */
+    // const scrollToAnimation = new ScrollToAnimation();
+    // scrollToAnimation.init();
+    //
+    // /**
+    //  * Acceptance input
+    //  * @type {AcceptanceInput}
+    //  */
+    // const acceptanceInput = new AcceptanceInput();
+    // acceptanceInput.init();
+    //
+    // /**
+    //  * Password input
+    //  * @type {PasswordInput}
+    //  */
+    // const passwordInput = new PasswordInput();
+    // passwordInput.init();
+    //
+    // /**
+    //  * Search input
+    //  * @type {SearchInput}
+    //  */
+    // const searchInput = new SearchInput();
+    // searchInput.init();
+    //
+    // /**
+    //  * Select input
+    //  * @type {SelectInput}
+    //  */
+    // const selectInput = new SelectInput();
+    // selectInput.init();
+    //
+    // /**
+    //  * Navigation
+    //  * @type {Navigation}
+    //  */
+    // const navigation = new Navigation();
+    // navigation.init();
+    //
+    // /**
+    //  * Slider
+    //  * @type {Slider}
+    //  */
+    // const slider = new Slider();
+    // slider.init();
 });
