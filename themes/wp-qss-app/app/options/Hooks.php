@@ -10,7 +10,7 @@ class Hooks {
 	}
 
 	public function add_custom_styles() : void {
-		wp_enqueue_script( 'my_custom_script', get_template_directory_uri() . '/static/dist/bundle.js', array(), microtime() );
+		wp_enqueue_script( 'my_custom_script', get_template_directory_uri() . '/static/dist/bundle.js', array(), microtime(), true );
 //		wp_enqueue_script( 'my_custom_script', get_template_directory_uri() . '/static/admin/js/index.js', array(), microtime() );
 	}
 }

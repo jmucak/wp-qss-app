@@ -1,33 +1,30 @@
-const { createHigherOrderComponent } = wp.compose;
-const { BlockControls } = wp.blockEditor;
-const { ToolbarButton } = wp.components;
-
-const withMyPluginControls = createHigherOrderComponent((BlockEdit) => {
-    return (props) => {
-        if (props.name !== "acf/text-block") {
-            return <BlockEdit key="edit" {...props} />;
-        }
-        console.dir(props.attributes.data);
-
-        return (
-            <>
-                <BlockControls>
-                    <ToolbarButton icon="editor-justify" title={"Copy"} onClick={() => copyContent(props)} />
-                </BlockControls>
-
-                <BlockEdit key="edit" {...props} />
-            </>
-        );
-    };
-}, "withMyPluginControls");
-
-wp.hooks.addFilter("editor.BlockEdit", "my-plugin/with-inspector-controls", withMyPluginControls);
-
-function copyContent(props) {
-    let data = props.attributes.data;
-
-    if (data) {
-        alert("Relation = " + data.relation);
-        alert("Title = " + data.title);
+import { CustomDuplicateButton } from "./components/CustomDuplicateButton";
+const ready = (callback) => {
+    if (document.readyState !== "loading") {
+        /**
+         * Document is already ready, call the callback directly
+         */
+        callback();
+    } else if (document.addEventListener) {
+        /**
+         * All modern browsers to register DOMContentLoaded
+         */
+        document.addEventListener("DOMContentLoaded", callback);
+    } else {
+        /**
+         * Old IE browsers
+         */
+        document.attachEvent("onreadystatechange", function () {
+            if (document.readyState === "complete") {
+                callback();
+            }
+        });
     }
-}
+};
+
+ready(() => {
+    if (wp) {
+        const customDuplicateButton = new CustomDuplicateButton();
+        customDuplicateButton.init();
+    }
+});

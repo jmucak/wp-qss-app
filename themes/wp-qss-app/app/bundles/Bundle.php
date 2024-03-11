@@ -40,4 +40,10 @@ class Bundle extends AssetBundle {
 			),
 		);
 	}
+
+	public function get_localize_data() : array {
+		return array(
+			'rest_route' => get_rest_url(),
+		);
+	}
 }
